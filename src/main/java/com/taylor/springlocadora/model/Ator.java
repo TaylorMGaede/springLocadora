@@ -1,12 +1,16 @@
 package com.taylor.springlocadora.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import lombok.Data;
 
@@ -24,6 +28,9 @@ public class Ator {
     @Column(length = 200, nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "ator")
-    private java.util.Set<AtorTitulo> atoresTitulos;
+    @ManyToMany(mappedBy = "atores", fetch = FetchType.EAGER)
+    private java.util.List<Titulo> titulos;
 }
+
+/* @OneToMany(mappedBy = "ator")
+    private java.util.Set<Titulo> atoresTitulos; */

@@ -11,10 +11,10 @@ import com.taylor.springlocadora.model.Titulo;
 
 @Repository
 public interface TituloRepository extends JpaRepository<Titulo, Long> {
-    @EntityGraph(attributePaths = {"diretor", "classe", "atoresTitulos"})
+    @EntityGraph(attributePaths = {"diretor", "classe", "atores"})
     List<Titulo> findAll();
 
-    @EntityGraph(attributePaths = {"diretor", "classe", "atoresTitulos"})
+    @EntityGraph(attributePaths = {"diretor", "classe", "atores"})
     @Override
     Optional<Titulo> findById(Long id);
 }

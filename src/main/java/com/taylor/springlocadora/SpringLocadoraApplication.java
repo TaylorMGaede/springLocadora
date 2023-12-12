@@ -25,7 +25,7 @@ public class SpringLocadoraApplication {
 	@Bean
 	CommandLineRunner initDatabase(AtorRepository atorRepository, DiretorRepository diretorRepository, ClasseRepository classeRepository, TituloRepository tituloRepository) {
 		return args -> {
-			atorRepository.deleteAll();
+			/* atorRepository.deleteAll();
 			diretorRepository.deleteAll();
 			classeRepository.deleteAll();
 			tituloRepository.deleteAll();
@@ -33,7 +33,7 @@ public class SpringLocadoraApplication {
 			Ator c = new Ator();
 			c.setName("É o fulano");
 
-			atorRepository.save(c);
+			atorRepository.save(c); */
 		};
 	}
 }
